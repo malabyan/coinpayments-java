@@ -15,23 +15,17 @@
  */
 package org.brunocvcunha.coinpayments.requests.base;
 
-import java.io.IOException;
-import java.io.InputStream;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.*;
+import lombok.extern.log4j.Log4j;
 import org.apache.http.client.ClientProtocolException;
 import org.brunocvcunha.coinpayments.CoinPayments;
 import org.brunocvcunha.inutils4j.MyStreamUtils;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.SneakyThrows;
-import lombok.extern.log4j.Log4j;
+import java.io.IOException;
+import java.io.InputStream;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -102,7 +96,7 @@ public abstract class CoinPaymentsRequest<T> {
      * @return Result
      */
     @SneakyThrows
-    public <U> U parseJson(String str, TypeReference<T> type) {
+    public <U> U parseJson(String str, TypeReference<U> type) {
         log.info("Reading " + type.getType() + " from " + str);
         return new ObjectMapper().readValue(str, type);
     }
