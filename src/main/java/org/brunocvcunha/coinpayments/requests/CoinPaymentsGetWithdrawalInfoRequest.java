@@ -15,18 +15,14 @@
  */
 package org.brunocvcunha.coinpayments.requests;
 
-import org.brunocvcunha.coinpayments.model.ResponseWrapper;
-import org.brunocvcunha.coinpayments.model.WithdrawalInfoResponse;
-import org.brunocvcunha.coinpayments.requests.CoinPaymentsGetTransactionInfoRequest.CoinPaymentsGetTransactionInfoRequestBuilder;
-import org.brunocvcunha.coinpayments.requests.base.CoinPaymentsPostRequest;
-
 import com.fasterxml.jackson.core.type.TypeReference;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.brunocvcunha.coinpayments.model.ResponseWrapper;
+import org.brunocvcunha.coinpayments.model.WithdrawalInfoResponse;
+import org.brunocvcunha.coinpayments.requests.base.CoinPaymentsPostRequest;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
