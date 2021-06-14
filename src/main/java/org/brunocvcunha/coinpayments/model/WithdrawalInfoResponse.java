@@ -15,12 +15,11 @@
  */
 package org.brunocvcunha.coinpayments.model;
 
-import java.math.BigInteger;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
+
+import java.math.BigInteger;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -29,7 +28,7 @@ public class WithdrawalInfoResponse {
     @JsonProperty("time_created")
     private String timeCreated;
     
-    private String status;
+    private int status;
     
     @JsonProperty("status_text")
     private String statusText;

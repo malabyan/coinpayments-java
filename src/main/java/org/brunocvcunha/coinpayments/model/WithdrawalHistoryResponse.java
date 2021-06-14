@@ -17,7 +17,6 @@ package org.brunocvcunha.coinpayments.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
 
 @Data
@@ -26,5 +25,9 @@ public class WithdrawalHistoryResponse extends WithdrawalInfoResponse {
 
     @JsonProperty("send_dest_tag")
     private String sendDestTag;
+
+    private String note;
+
+    private String id;
 
 }
