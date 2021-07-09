@@ -21,7 +21,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class WithdrawalHistoryResponse extends WithdrawalInfoResponse {
+public class WithdrawalHistoryRecord extends WithdrawalInfoResponse {
 
     @JsonProperty("send_dest_tag")
     private String sendDestTag;

@@ -15,18 +15,16 @@
  */
 package org.brunocvcunha.coinpayments.requests;
 
-import java.util.Map;
-
+import com.fasterxml.jackson.core.type.TypeReference;
+import lombok.Builder;
 import org.brunocvcunha.coinpayments.model.ResponseWrapper;
-import org.brunocvcunha.coinpayments.model.WithdrawalHistoryResponse;
+import org.brunocvcunha.coinpayments.model.WithdrawalHistoryRecord;
 import org.brunocvcunha.coinpayments.requests.base.CoinPaymentsPostRequest;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-
-import lombok.Builder;
+import java.util.List;
 
 @Builder
-public class CoinPaymentsGetWithdrawalHistoryRequest extends CoinPaymentsPostRequest<ResponseWrapper<Map<String, WithdrawalHistoryResponse>>>  {
+public class CoinPaymentsGetWithdrawalHistoryRequest extends CoinPaymentsPostRequest<ResponseWrapper<List<WithdrawalHistoryRecord>>>  {
 	
 	@Builder.Default private int limit = 25;
 	
@@ -45,8 +43,8 @@ public class CoinPaymentsGetWithdrawalHistoryRequest extends CoinPaymentsPostReq
     }
 
 	@Override
-	public ResponseWrapper<Map<String, WithdrawalHistoryResponse>> parseResult(int resultCode, String content) {
-        ResponseWrapper<Map<String, WithdrawalHistoryResponse>> wrapper = parseJson(content, new TypeReference<ResponseWrapper<Map<String, WithdrawalHistoryResponse>>>() {});
+	public ResponseWrapper<List<WithdrawalHistoryRecord>> parseResult(int resultCode, String content) {
+        ResponseWrapper<List<WithdrawalHistoryRecord>> wrapper = parseJson(content, new TypeReference<ResponseWrapper<List<WithdrawalHistoryRecord>>>() {});
         return wrapper;
 	}
 
